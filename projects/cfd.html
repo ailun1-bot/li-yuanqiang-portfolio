@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CFD仿真作品集｜李远强</title>
+  <meta name="description" content="李远强CFD仿真作品集：风道风轮、叶片、多相流、压损和流场分析。">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="主导航">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">LY</span>
+        <span><strong>李远强</strong><small>CFD Portfolio</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+        <span class="sr-only">打开导航</span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="../index.html">首页</a>
+        <a href="structure.html">结构项目</a>
+        <a href="cfd.html" class="active">CFD仿真</a>
+        <a href="ai-tools.html">AI工具</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-hero shell">
+      <p class="eyebrow">CFD Simulation</p>
+      <h1>CFD仿真作品集</h1>
+      <p>CFD 是独立技术能力，不和结构项目混在一起。这里按项目展示风道、风轮、叶片、吸尘器流道、多相流和仿真结果整理能力。</p>
+      <div class="tag-row">
+        <span>Fluent</span><span>Star-CCM+</span><span>流线/速度云图</span><span>压损分析</span><span>P-Q曲线</span><span>气固两相流</span>
+      </div>
+    </section>
+
+    <section class="section shell compact-section">
+      <div class="case-grid">
+
+        <!-- 1. 浴霸风道风轮 -->
+        <article class="case-block reveal">
+          <div class="case-copy">
+            <p class="project-kicker">浴霸 · 风道风轮</p>
+            <h2>浴霸风道风轮 CFD 优化</h2>
+            <p>对浴霸内部紧凑风道和离心风轮做流场分析，识别局部回流、压损偏大和速度分布不均的区域。通过 Fluent 仿真和 Workbench 响应面优化，部分项目仿真与实验误差控制在 5% 以内，仿真结果能直接指导风道和风轮方案调整。</p>
+          </div>
+          <div class="gallery">
+            <button class="gallery-item wide" data-lightbox="../assets/images/cfd/bathroom-heater-d1-02.png" data-caption="浴霸内部流动路径与速度云图">
+              <img src="../assets/images/cfd/bathroom-heater-d1-02.png" alt="浴霸内部流动路径与速度云图" loading="lazy">
+            </button>
+            <button class="gallery-item" data-lightbox="../assets/images/cfd/bathroom-heater-d1-04.png" data-caption="风道风轮流线分析">
+              <img src="../assets/images/cfd/bathroom-heater-d1-04.png" alt="风道风轮流线分析" loading="lazy">
+            </button>
+            <button class="gallery-item" data-lightbox="../assets/images/cfd/bathroom-heater-s6-04.png" data-caption="双风轮浴霸流场对比">
+              <img src="../assets/images/cfd/bathroom-heater-s6-04.png" alt="双风轮浴霸流场对比" loading="lazy">
+            </button>
+          </div>
+        </article>
+
+        <!-- 2. 高风速低噪音浴霸 -->
+        <article class="case-block reverse reveal">
+          <div class="case-copy">
+            <p class="project-kicker">浴霸 · 高风速低噪音</p>
+            <h2>高风速低噪音浴霸优化</h2>
+            <p>在有限尺寸下平衡出风表现和噪声控制。通过 CFD 定位气流分离、涡流和局部高损失区域，结合样机测试反推噪声来源。结构方案、仿真和测试反复迭代，帮助团队更清楚地判断问题根因。</p>
+          </div>
+          <div class="gallery">
+            <button class="gallery-item wide" data-lightbox="../assets/images/cfd/cfd-gallery-01.jpg" data-caption="速度云图与局部损失识别">
+              <img src="../assets/images/cfd/cfd-gallery-01.jpg" alt="速度云图与局部损失识别" loading="lazy">
+            </button>
+            <button class="gallery-item" data-lightbox="../assets/images/cfd/cfd-gallery-02.jpg" data-caption="高速出风区域流场分析">
+              <img src="../assets/images/cfd/cfd-gallery-02.jpg" alt="高速出风区域流场分析" loading="lazy">
+            </button>
+            <button class="gallery-item" data-lightbox="../assets/images/cfd/cfd-gallery-03.jpg" data-caption="局部涡流与回流识别">
+              <img src="../assets/images/cfd/cfd-gallery-03.jpg" alt="局部涡流与回流识别" loading="lazy">
+            </button>
+          </div>
+        </article>
+
+        <!-- 3. 换气扇 -->
+        <article class="case-block reveal">
+          <div class="case-copy">
+            <p class="project-kicker">换气扇 · 能效与系统匹配</p>
+            <h2>换气扇能效与 P-Q 曲线匹配</h2>
+            <p>关注风机系统效率和能耗表现，参与电机选型、P-Q 曲线匹配和内部流道分析。使用 Fluent 计算风机性能曲线、全压和静压效率，结合电机特性判断系统匹配是否合理。核心认知：风轮、风道、电机和系统阻抗是一起工作的，单独优化某一个零件不一定让整机变好。</p>
+          </div>
+          <div class="gallery">
+            <button class="gallery-item wide" data-lightbox="../assets/images/cfd/cfd-gallery-04.jpg" data-caption="换气扇内部流道分析">
+              <img src="../assets/images/cfd/cfd-gallery-04.jpg" alt="换气扇内部流道分析" loading="lazy">
+            </button>
+            <button class="gallery-item" data-lightbox="../assets/images/cfd/cfd-gallery-05.jpg" data-caption="全压与静压效率对比">
+              <img src="../assets/images/cfd/cfd-gallery-05.jpg" alt="全压与静压效率对比" loading="lazy">
+            </button>
+            <button class="gallery-item" data-lightbox="../assets/images/cfd/cfd-gallery-06.jpg" data-caption="P-Q 曲线与系统匹配分析">
+              <img src="../assets/images/cfd/cfd-gallery-06.jpg" alt="P-Q 曲线与系统匹配分析" loading="lazy">
+            </button>
+          </div>
+        </article>
+
+        <!-- 4. 风扇灯 CFD -->
+        <article class="case-block reverse reveal">
+          <div class="case-copy">
+            <p class="project-kicker">风扇灯 · 旋转叶片</p>
+            <h2>风扇灯叶片 CFD 优化</h2>
+            <p>通过仿真和测试配合优化叶片方案。参考行业标杆产品的叶片特征，使用参数化和响应面方法对叶片角度、截面进行优化。重点建立了"仿真—测试"的对应关系，让计算结果能真正指导设计而不是只做参考。</p>
+          </div>
+          <div class="gallery gallery-row">
+            <button class="gallery-item" data-lightbox="../assets/images/cfd/cfd-gallery-07.png" data-caption="叶片方案仿真对比">
+              <img src="../assets/images/cfd/cfd-gallery-07.png" alt="叶片方案仿真对比" loading="lazy">
+            </button>
+            <button class="gallery-item" data-lightbox="../assets/images/cfd/cfd-gallery-08.jpg" data-caption="叶片周围流线分布">
+              <img src="../assets/images/cfd/cfd-gallery-08.jpg" alt="叶片周围流线分布" loading="lazy">
+            </button>
+            <button class="gallery-item" data-lightbox="../assets/images/cfd/cfd-gallery-09.jpg" data-caption="响应面优化结果">
+              <img src="../assets/images/cfd/cfd-gallery-09.jpg" alt="响应面优化结果" loading="lazy">
+            </button>
+          </div>
+        </article>
+
+        <!-- 5. 吸尘器 CFD -->
+        <article class="case-block reveal">
+          <div class="case-copy">
+            <p class="project-kicker">吸尘器 · 多相流 / 流道</p>
+            <h2>吸尘器多锥分离与地刷流道分析</h2>
+            <p>关注多锥分离结构和地刷流道的气流均匀性、压损和气固两相分离路径。先拆解竞品理解成熟方案，再建模仿真对比分析。通过 CFD 快速排除明显不合理的流道方案，减少后续手板和测试成本。</p>
+          </div>
+          <div class="gallery">
+            <button class="gallery-item wide" data-lightbox="../assets/images/cfd/cfd-gallery-10.jpg" data-caption="多锥分离流场分析">
+              <img src="../assets/images/cfd/cfd-gallery-10.jpg" alt="多锥分离流场分析" loading="lazy">
+            </button>
+            <button class="gallery-item" data-lightbox="../assets/images/cfd/cfd-gallery-11.jpg" data-caption="地刷流道速度云图">
+              <img src="../assets/images/cfd/cfd-gallery-11.jpg" alt="地刷流道速度云图" loading="lazy">
+            </button>
+            <button class="gallery-item" data-lightbox="../assets/images/cfd/cfd-gallery-12.jpg" data-caption="气固两相分离路径分析">
+              <img src="../assets/images/cfd/cfd-gallery-12.jpg" alt="气固两相分离路径分析" loading="lazy">
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CFD Gallery -->
+    <section class="section shell">
+      <div class="section-heading reveal">
+        <p class="eyebrow">CFD Gallery</p>
+        <h2>综合仿真图谱</h2>
+        <p>公开版只展示仿真表达方式，不展示具体参数、边界条件和内部测试数据。</p>
+      </div>
+      <div class="image-strip reveal-stagger">
+        <button class="reveal" data-lightbox="../assets/images/cfd/cfd-gallery-01.jpg" data-caption="速度云图与局部损失识别">
+          <img src="../assets/images/cfd/cfd-gallery-01.jpg" alt="速度云图与局部损失识别" loading="lazy">
+        </button>
+        <button class="reveal" data-lightbox="../assets/images/cfd/cfd-gallery-04.jpg" data-caption="换气扇流道分析">
+          <img src="../assets/images/cfd/cfd-gallery-04.jpg" alt="换气扇流道分析" loading="lazy">
+        </button>
+        <button class="reveal" data-lightbox="../assets/images/cfd/cfd-gallery-07.png" data-caption="叶片仿真对比">
+          <img src="../assets/images/cfd/cfd-gallery-07.png" alt="叶片仿真对比" loading="lazy">
+        </button>
+        <button class="reveal" data-lightbox="../assets/images/cfd/cfd-gallery-10.jpg" data-caption="多锥分离流场">
+          <img src="../assets/images/cfd/cfd-gallery-10.jpg" alt="多锥分离流场" loading="lazy">
+        </button>
+        <button class="reveal" data-lightbox="../assets/images/cfd/cfd-gallery-13.jpg" data-caption="仿真结果汇总视图">
+          <img src="../assets/images/cfd/cfd-gallery-13.jpg" alt="仿真结果汇总视图" loading="lazy">
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" aria-hidden="true" role="dialog" aria-label="图片预览">
+    <button class="lightbox-close" type="button" aria-label="关闭图片预览">×</button>
+    <img src="" alt="">
+    <p></p>
+  </div>
+
+  <footer class="footer shell">
+    <p>© 2026 李远强 · Structure, CFD and AI-assisted engineering tools.</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

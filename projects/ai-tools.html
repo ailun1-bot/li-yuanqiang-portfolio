@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI工程工具方向｜李远强</title>
+  <meta name="description" content="李远强AI工程工具方向：仿真需求分析、CFD接单评估、仿真报告生成。">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="主导航">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">LY</span>
+        <span><strong>李远强</strong><small>AI Tools</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+        <span class="sr-only">打开导航</span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="../index.html">首页</a>
+        <a href="structure.html">结构项目</a>
+        <a href="cfd.html">CFD仿真</a>
+        <a href="ai-tools.html" class="active">AI工具</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-hero shell">
+      <p class="eyebrow">AI Engineering Tools</p>
+      <h1>AI 增强型工程工具方向</h1>
+      <p>这部分是长期建设方向，目标不是脱离工程背景转纯算法，而是把结构、CFD、接单和报告流程工具化。</p>
+      <div class="tag-row">
+        <span>Python</span><span>LLM应用</span><span>工程知识库</span><span>接单评估</span><span>报告生成</span>
+      </div>
+    </section>
+
+    <!-- Tool Cards -->
+    <section class="section shell compact-section">
+      <div class="tool-grid detail-tools reveal-stagger">
+        <article class="tool-card active reveal">
+          <span>Prototype 01</span>
+          <h3>仿真需求分析助手</h3>
+          <p>目标是把客户发来的仿真需求拆成可判断、可报价、可交付的内容。比如客户只说"做一个流固耦合仿真"，但真正接单前需要判断：是稳态还是瞬态、有没有边界条件、模型是否完整、材料参数是否明确、是否需要实验验证、交付物是报告还是操作录屏。</p>
+          <p>这个工具可以帮助我快速识别需求风险，整理需要追问的问题。它不是为了炫技，而是解决真实接单中最容易出错的环节：需求没问清、报价不准、交付边界不明确。</p>
+        </article>
+        <article class="tool-card reveal">
+          <span>Prototype 02</span>
+          <h3>CFD 接单评估工具</h3>
+          <p>主要用于判断一个仿真项目能不能接。输入需求描述后，工具会从难度、软件要求、时间成本、风险点、报价区间和交付范围几个角度进行评估。</p>
+          <p>我希望它能把项目分成几类：可以接、谨慎接、暂时不建议接。比如普通风道压损、风机流场、小型 Fluent 指导类项目适合优先接；而高复杂度流固耦合、燃烧、学术型大规模参数扫掠，就需要非常谨慎。这个工具未来可以配合仿真秀、Upwork 或其他接单平台使用，帮助我更稳地筛项目。</p>
+        </article>
+        <article class="tool-card reveal">
+          <span>Prototype 03</span>
+          <h3>仿真报告生成工具</h3>
+          <p>目标是减少重复文档工作。很多 CFD 项目最终都需要整理模型说明、边界条件、云图、流量/压力结果、问题分析和优化建议。</p>
+          <p>这个工具不追求完全自动化，而是先把最繁琐的格式整理、图表标注和模板填充做掉，让我能把精力集中在分析和判断上，而不是反复排版。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Why This Direction -->
+    <section class="section shell">
+      <div class="process-panel reveal">
+        <p class="eyebrow">Why This Direction</p>
+        <h2>为什么这条路线适合我</h2>
+        <p>我的优势不在于从零做纯算法，而在于理解真实工程问题。AI 工具的价值，是把仿真需求判断、方案拆解、报告整理和接单沟通变成可复用流程。</p>
+        <ol>
+          <li>用工程经验判断需求是否靠谱</li>
+          <li>用软件工具整理参数、图片和结论</li>
+          <li>用 AI 提高方案、报价、报告和复盘效率</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <p>© 2026 李远强 · Structure, CFD and AI-assisted engineering tools.</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

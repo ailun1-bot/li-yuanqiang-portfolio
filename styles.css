@@ -154,6 +154,17 @@ h3 { font-size: 22px; line-height: 1.28; font-weight: 700; }
 
 .hero-lead { max-width: 640px; margin-top: 28px; color: var(--text-secondary); font-size: 17px; line-height: 1.8; }
 
+.hero-stats { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.hero-stat {
+  padding: 14px 20px; border: 1px solid var(--border);
+  border-radius: var(--radius-sm); background: rgba(0,229,255,0.03);
+  text-align: center; min-width: 120px;
+  transition: all 0.25s var(--ease-out);
+}
+.hero-stat:hover { border-color: var(--cyan); background: rgba(0,229,255,0.06); }
+.hero-stat-num { display: block; font-size: 24px; font-weight: 800; color: var(--cyan); line-height: 1.2; }
+.hero-stat-label { display: block; font-size: 12px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 4px; }
+
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
 
 /* Buttons */

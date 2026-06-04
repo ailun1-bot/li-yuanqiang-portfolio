@@ -141,18 +141,13 @@ h3 { font-size: 22px; line-height: 1.28; font-weight: 700; }
   padding: 80px 0 60px;
 }
 
-.hero-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
-.eyebrow-line { width: 40px; height: 1px; background: var(--cyan); opacity: 0.5; }
-.hero-eyebrow .eyebrow { margin-bottom: 0; }
+.hero-lead { max-width: 640px; margin-top: 16px; color: var(--text-secondary); font-size: 17px; line-height: 1.8; }
 
-.h1-line { display: block; }
-.h1-accent {
-  background: linear-gradient(135deg, #00e5ff 0%, #ff8c42 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
+.hero-subtitle {
+  font-family: var(--font-mono);
+  font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
+  color: var(--cyan); margin-top: 8px;
 }
-
-.hero-lead { max-width: 640px; margin-top: 28px; color: var(--text-secondary); font-size: 17px; line-height: 1.8; }
 
 .hero-stats { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
 .hero-stat {

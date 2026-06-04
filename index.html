@@ -96,15 +96,15 @@
           </div>
           <dl class="hero-metrics">
             <div>
-              <dt><span class="metric-num" data-target="3">0</span> 年+</dt>
+              <dt>3 年+</dt>
               <dd>产品结构 / 仿真经验</dd>
             </div>
             <div>
-              <dt><span class="metric-num" data-target="5">0</span>%</dt>
+              <dt>&lt;5%</dt>
               <dd>仿真与实验误差</dd>
             </div>
             <div>
-              <dt><span class="metric-num" data-target="3">0</span> 项</dt>
+              <dt>3 项</dt>
               <dd>第一发明人专利</dd>
             </div>
           </dl>
@@ -132,7 +132,7 @@
               <span class="timeline-company">乐歌人体工学科技股份有限公司（A股上市）</span>
               <span class="timeline-date">2025.01 — 至今</span>
             </div>
-            <p>负责升降桌整机结构开发、升降机构设计、强度刚度校核与量产交付。主导/深度参与 3 款升降桌产品结构开发，使用 SolidWorks 完成三维建模、工程图和 BOM 维护，对关键受力件进行静力学强度校核与刚度分析。<strong>刚度提升 15%，结构减重 8%</strong>。3 款产品完成量产验证并顺利上市，具备从方案设计到量产落地的完整产品开发经验。</p>
+            <p>负责升降桌整机结构开发、升降机构设计、强度刚度校核与量产交付。深度参与多款升降桌产品结构开发，使用 SolidWorks 完成三维建模、工程图和 BOM 维护，完成关键受力件静力学强度校核与刚度分析，为结构方案迭代提供依据。相关产品完成量产验证并上市，具备从方案设计到量产落地的完整产品开发经验。</p>
           </div>
         </article>
         <article class="timeline-item reveal">
@@ -143,7 +143,7 @@
               <span class="timeline-company">美的集团 · 美智光电</span>
               <span class="timeline-date">2023.02 — 2024.12</span>
             </div>
-            <p>负责浴霸、换气扇、风扇灯、吸尘器等产品的 CFD 流体仿真、风道风轮优化、噪声定位、性能对标与结构设计。使用 Fluent 完成流场仿真与参数化优化，仿真与实验误差控制在 5% 以内。<strong>浴霸风量比竞品高 12%，同尺寸噪声低 3dB；风扇灯风量持平、噪声低 3dB；换气扇成本降低 18%、噪声低 3dB</strong>。浴霸、风扇灯等产品完成量产验证并上市，参与浴霸/风扇灯仿真实验技术规范撰写。</p>
+            <p>负责浴霸、换气扇、风扇灯、吸尘器等产品的 CFD 流体仿真、风道风轮优化、性能对标与结构设计。使用 Fluent 完成流场分析和参数化优化，输出流线、速度、压力、流量等结果，为风道、风轮和叶片方案迭代提供依据。部分项目仿真与实验误差控制在 5% 以内，相关产品完成量产验证并上市，参与浴霸/风扇灯仿真实验技术规范撰写。</p>
           </div>
         </article>
       </div>
@@ -473,27 +473,6 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Counter animation
-    const metricObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const nums = entry.target.querySelectorAll('.metric-num');
-        nums.forEach(el => {
-          const target = parseInt(el.dataset.target);
-          const dur = 1200;
-          const start = performance.now();
-          function update(now) {
-            const p = Math.min((now - start) / dur, 1);
-            const eased = 1 - Math.pow(1 - p, 3);
-            el.textContent = Math.round(eased * target);
-            if (p < 1) requestAnimationFrame(update);
-          }
-          requestAnimationFrame(update);
-        });
-        metricObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.5 });
-    document.querySelectorAll('.hero-metrics').forEach(el => metricObserver.observe(el));
   </script>
 </body>
 </html>

@@ -1,106 +1,51 @@
 /* ============================================================
-   Enhanced script.js — Dark Precision Portfolio
-   Navigation, Lightbox, Scroll Reveal
+   Shared JS — Nav, Lightbox, Scroll Reveal
    ============================================================ */
 
-const navToggle = document.querySelector(".nav-toggle");
-const navLinks = document.querySelector(".nav-links");
-const lightbox = document.querySelector(".lightbox");
-const lightboxImg = lightbox?.querySelector("img");
-const lightboxCaption = lightbox?.querySelector("p");
-const lightboxClose = document.querySelector(".lightbox-close");
+const navToggle = document.querySelector('.nav-toggle');
+const navLinksEl = document.getElementById('nav-links');
 
-/* ---- Mobile Navigation ---- */
-navToggle?.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("open");
-  navToggle.setAttribute("aria-expanded", String(isOpen));
+navToggle?.addEventListener('click', () => {
+  const open = navLinksEl.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(open));
 });
-
-navLinks?.addEventListener("click", (event) => {
-  if (event.target.matches("a")) {
-    navLinks.classList.remove("open");
-    navToggle?.setAttribute("aria-expanded", "false");
+navLinksEl?.addEventListener('click', e => {
+  if (e.target.matches('a')) {
+    navLinksEl.classList.remove('open');
+    navToggle?.setAttribute('aria-expanded', 'false');
   }
 });
 
-/* ---- Lightbox ---- */
-document.querySelectorAll("[data-lightbox]").forEach((button) => {
-  button.addEventListener("click", () => {
-    const src = button.getAttribute("data-lightbox");
-    const caption = button.getAttribute("data-caption") || "";
-    lightboxImg.src = src;
-    lightboxImg.alt = caption;
-    lightboxCaption.textContent = caption;
-    lightbox.classList.add("open");
-    lightbox.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-    lightboxClose?.focus();
+/* Lightbox */
+const lightbox = document.querySelector('.lightbox');
+const lbImg = lightbox?.querySelector('img');
+const lbCaption = lightbox?.querySelector('p');
+const lbClose = document.querySelector('.lightbox-close');
+
+document.querySelectorAll('[data-lightbox]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    lbImg.src = btn.getAttribute('data-lightbox');
+    lbImg.alt = btn.getAttribute('data-caption') || '';
+    lbCaption.textContent = btn.getAttribute('data-caption') || '';
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
   });
 });
-
-function closeLightbox() {
-  lightbox.classList.remove("open");
-  lightbox.setAttribute("aria-hidden", "true");
-  lightboxImg.src = "";
-  document.body.style.overflow = "";
+function closeLB() {
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden', 'true');
+  if (lbImg) lbImg.src = '';
+  document.body.style.overflow = '';
 }
+lbClose?.addEventListener('click', closeLB);
+lightbox?.addEventListener('click', e => { if (e.target === lightbox) closeLB(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && lightbox?.classList.contains('open')) closeLB(); });
 
-lightboxClose?.addEventListener("click", closeLightbox);
-
-lightbox?.addEventListener("click", (event) => {
-  if (event.target === lightbox) {
-    closeLightbox();
-  }
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && lightbox?.classList.contains("open")) {
-    closeLightbox();
-  }
-});
-
-/* ---- Scroll Reveal (Intersection Observer) ---- */
-(function () {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          // Optional: unobserve after reveal for performance
-          // observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.12,
-      rootMargin: "0px 0px -40px 0px",
-    }
-  );
-
-  document.querySelectorAll(".reveal").forEach((el) => {
-    observer.observe(el);
-  });
-})();
-
-/* ---- Stagger children on scroll into view ---- */
-(function () {
-  document.querySelectorAll(".reveal-stagger").forEach((container) => {
-    const children = container.querySelectorAll(".reveal:not(.visible)");
-    if (!children.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          children.forEach((child, i) => {
-            child.style.transitionDelay = `${i * 80}ms`;
-            child.classList.add("visible");
-          });
-          observer.unobserve(container);
-        }
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
-    );
-
-    observer.observe(container);
-  });
+/* Scroll reveal */
+(function() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 })();

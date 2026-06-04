@@ -5,20 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>李远强｜结构开发 / CFD流体仿真 / AI增强型工程工具</title>
   <meta name="description" content="李远强个人作品集：结构开发、CFD流体仿真、产品性能优化与AI增强型工程工具。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <canvas id="flow-bg" aria-hidden="true"></canvas>
+
   <a class="skip-link" href="#main">跳到主要内容</a>
 
   <header class="site-header">
     <nav class="nav shell" aria-label="主导航">
       <a class="brand" href="index.html">
-        <span class="brand-mark">LY</span>
+        <span class="brand-mark">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect x="2" y="2" width="24" height="24" rx="4" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M8 20V10l6 8 6-8v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
         <span><strong>李远强</strong><small>Engineering Portfolio</small></span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
-        <span></span><span></span><span></span>
-        <span class="sr-only">打开导航</span>
+        <span></span><span></span>
+        <span class="sr-only">导航</span>
       </button>
       <div class="nav-links" id="nav-links">
         <a href="projects/structure.html">结构项目</a>
@@ -33,145 +43,223 @@
   <main id="main">
     <!-- Hero -->
     <section class="hero shell">
-      <div class="hero-copy">
-        <p class="eyebrow">深圳求职方向 · 结构开发 / CFD仿真 / 工程工具</p>
-        <h1>懂结构落地，<br>也懂流场优化的工程师</h1>
-        <p class="hero-lead">
-          具备结构开发、CFD流体仿真和产品量产经验，做过升降桌、浴霸、风扇灯、吸尘器等产品。
-          长期方向是把结构、仿真和AI结合，沉淀成可复用的工程工具。
-        </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="projects/structure.html">结构项目 →</a>
-          <a class="btn secondary" href="projects/cfd.html">CFD仿真 →</a>
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-line"></span>
+          <p class="eyebrow">深圳 · 结构开发 / CFD流体仿真 / AI工程工具</p>
         </div>
-        <div class="tag-row" aria-label="核心能力标签">
+        <h1>
+          <span class="h1-line">懂结构落地，</span>
+          <span class="h1-line h1-accent">也懂流场优化的</span>
+          <span class="h1-line">工程师</span>
+        </h1>
+        <p class="hero-lead">先后在<strong>美的集团（美智光电）</strong>和<strong>乐歌股份（A股上市）</strong>担任 CFD 仿真工程师与产品结构工程师。做过浴霸、风扇灯、换气扇、吸尘器、升降桌等产品，仿真与实验误差 &lt;5%，3款升降桌量产上市。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="projects/structure.html">
+            <span>结构项目</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-secondary" href="projects/cfd.html">
+            <span>CFD仿真</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="hero-tags">
           <span>SolidWorks / Creo</span>
           <span>Fluent / Star-CCM+</span>
-          <span>强度 / 刚度校核</span>
           <span>DFM / 试产量产</span>
-          <span>AI工程工具</span>
+          <span>仿真-实验闭环 &lt;5%</span>
         </div>
       </div>
 
-      <aside class="hero-panel">
-        <img class="portrait" src="assets/images/profile/li-yuanqiang-headshot.png" alt="李远强证件照" width="120" height="160" loading="eager">
-        <h2>李远强</h2>
-        <p>本科 · 机械电子工程</p>
-        <p>目标城市：深圳</p>
-        <dl class="hero-metrics">
-          <div><dt>3 年</dt><dd>结构开发 / 仿真优化</dd></div>
-          <div><dt>3 款</dt><dd>升降桌产品量产上市</dd></div>
-          <div><dt>&lt;5%</dt><dd>部分项目仿真与实验误差</dd></div>
-        </dl>
+      <aside class="hero-card">
+        <div class="hero-card-glow"></div>
+        <div class="hero-card-inner">
+          <div class="portrait-frame">
+            <img class="portrait" src="assets/images/profile/li-yuanqiang-headshot.png" alt="李远强" width="140" height="187" loading="eager">
+          </div>
+          <div class="hero-card-info">
+            <h2>李远强</h2>
+            <p>本科 · 机械电子工程</p>
+            <p>目标城市：深圳</p>
+          </div>
+          <dl class="hero-metrics">
+            <div>
+              <dt><span class="metric-num" data-target="3">0</span> 年</dt>
+              <dd>结构开发 / 仿真优化</dd>
+            </div>
+            <div>
+              <dt><span class="metric-num" data-target="3">0</span> 款</dt>
+              <dd>产品量产上市</dd>
+            </div>
+            <div>
+              <dt>&lt;<span class="metric-num" data-target="5">0</span>%</dt>
+              <dd>仿真与实验误差</dd>
+            </div>
+          </dl>
+          <div class="hero-awards">
+            <span class="award-badge">🏆 机械创新大赛全国一等奖</span>
+            <span class="award-badge">📜 发明专利1项 + 实用新型2项</span>
+          </div>
+        </div>
       </aside>
     </section>
 
     <!-- Notice -->
-    <section class="notice shell reveal">
-      <p>⚡ 公开展示版：项目图片用于说明工程能力，不展示真实尺寸、边界条件、测试参数和公司内部文件信息。</p>
+    <div class="shell">
+      <p class="notice-line">公开展示版：项目图片用于说明工程能力，不展示真实尺寸、边界条件和内部文件信息。</p>
+    </div>
+
+    <!-- Work Experience -->
+    <section class="section shell">
+      <div class="section-heading reveal">
+        <p class="eyebrow">· Work Experience ·</p>
+        <h2>工作经历</h2>
+      </div>
+      <div class="work-timeline">
+        <article class="timeline-item reveal">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>产品结构工程师</h3>
+              <span class="timeline-company">乐歌人体工学科技股份有限公司（A股上市）</span>
+              <span class="timeline-date">2025.01 — 至今</span>
+            </div>
+            <p>负责升降桌整机结构开发、升降机构设计、强度刚度校核与量产交付。主导/深度参与 3 款升降桌产品结构开发，使用 SolidWorks 完成三维建模、工程图和 BOM 维护，对关键受力件进行静力学强度校核与刚度分析。3 款产品完成量产验证并顺利上市，具备从方案设计到量产落地的完整产品开发经验。</p>
+          </div>
+        </article>
+        <article class="timeline-item reveal">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>CFD仿真工程师 / 结构开发工程师</h3>
+              <span class="timeline-company">美的集团 · 美智光电</span>
+              <span class="timeline-date">2023.02 — 2024.12</span>
+            </div>
+            <p>负责浴霸、换气扇、风扇灯、吸尘器等产品的 CFD 流体仿真、风道风轮优化、噪声定位、性能对标与结构设计。使用 Fluent 完成流场仿真与参数化优化，仿真与实验误差控制在 5% 以内。参与浴霸/风扇灯仿真实验技术规范撰写，完成 Creo 结构设计、DFM 评审和模具跟进。</p>
+          </div>
+        </article>
+      </div>
     </section>
 
     <!-- Portfolio Routes -->
     <section class="section shell">
       <div class="section-heading reveal">
-        <p class="eyebrow">Portfolio Routes</p>
+        <p class="eyebrow">· Portfolio Routes ·</p>
         <h2>作品集入口</h2>
-        <p>把结构项目和CFD仿真分开看，主线更清楚，也更适合面试时讲项目。</p>
       </div>
 
-      <div class="route-grid reveal-stagger">
-        <a class="route-card structure-route reveal" href="projects/structure.html">
-          <img src="assets/images/structure/standing-desk-l-shape-01.png" alt="结构项目代表图" loading="lazy">
-          <div>
-            <span>Structure Projects</span>
-            <h3>结构项目作品集</h3>
-            <p>升降桌、浴霸、风扇灯、吸尘器等产品结构开发、机构设计、DFM、试产和量产经验。</p>
-            <strong>进入结构项目 →</strong>
+      <div class="route-grid">
+        <a class="route-card card-structure reveal" href="projects/structure.html">
+          <div class="card-accent"></div>
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <rect x="4" y="6" width="24" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M12 16h8M16 12v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="16" cy="16" r="3" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
           </div>
+          <h3>结构项目作品集</h3>
+          <p>升降桌、浴霸、风扇灯、吸尘器等产品结构开发、机构设计、DFM、试产和量产经验。</p>
+          <span class="card-link">进入结构项目 →</span>
         </a>
 
-        <a class="route-card cfd-route reveal" href="projects/cfd.html">
-          <img src="assets/images/cfd/cfd-gallery-01.jpg" alt="CFD仿真代表图" loading="lazy">
-          <div>
-            <span>CFD Simulation</span>
-            <h3>CFD仿真作品集</h3>
-            <p>风道风轮、叶片、多相流、压损、流量、速度云图，以及仿真与实验对比能力。</p>
-            <strong>进入CFD仿真 →</strong>
+        <a class="route-card card-cfd reveal" href="projects/cfd.html">
+          <div class="card-accent"></div>
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M4 24 Q10 4 16 14 Q22 24 28 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="10" cy="16" r="2" fill="currentColor" opacity="0.4"/>
+              <circle cx="16" cy="14" r="2" fill="currentColor" opacity="0.6"/>
+              <circle cx="22" cy="12" r="1.5" fill="currentColor" opacity="0.3"/>
+            </svg>
           </div>
+          <h3>CFD仿真作品集</h3>
+          <p>风道风轮、叶片、多相流、压损分析和 P-Q 曲线匹配，仿真与实验对比验证能力。</p>
+          <span class="card-link">进入CFD仿真 →</span>
         </a>
 
-        <a class="route-card ai-route reveal" href="projects/ai-tools.html">
-          <div class="tool-preview">
-            <span>需求分析</span><span>风险评估</span><span>智能报价</span><span>报告生成</span>
+        <a class="route-card card-ai reveal" href="projects/ai-tools.html">
+          <div class="card-accent"></div>
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <rect x="4" y="4" width="24" height="24" rx="5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 22V12l4 6 4-6v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="22" cy="10" r="2" fill="currentColor" opacity="0.5"/>
+            </svg>
           </div>
-          <div>
-            <span>AI Engineering Tools</span>
-            <h3>AI工程工具方向</h3>
-            <p>仿真需求分析助手、接单评估工具和报告生成工具等原型方向，作为长期成长主线。</p>
-            <strong>进入AI工具 →</strong>
-          </div>
+          <h3>AI工程工具方向</h3>
+          <p>仿真需求分析助手、接单评估工具和报告生成工具等原型方向，作为长期成长主线。</p>
+          <span class="card-link">进入AI工具 →</span>
         </a>
       </div>
     </section>
 
-    <!-- Capability Map -->
+    <!-- Capability -->
     <section class="section shell">
       <div class="section-heading reveal">
-        <p class="eyebrow">Capability Map</p>
+        <p class="eyebrow">· Capability Map ·</p>
         <h2>能力结构</h2>
       </div>
-      <div class="capability-grid reveal-stagger">
-        <article class="reveal">
-          <span class="line-icon">01</span>
+      <div class="capability-grid">
+        <article class="cap-card reveal">
+          <span class="cap-num">01</span>
           <h3>结构 / 机构设计</h3>
-          <p>产品结构、升降机构、传动结构、工程图、BOM、DFM评审、试产问题处理。</p>
+          <p>产品结构、升降机构、传动件、工程图、BOM、DFM 评审、试产问题闭环处理。</p>
         </article>
-        <article class="reveal">
-          <span class="line-icon">02</span>
+        <article class="cap-card reveal">
+          <span class="cap-num">02</span>
           <h3>CFD流体仿真</h3>
-          <p>风道、风轮、叶片、压损、P-Q曲线、速度云图、流线和局部高损区域定位。</p>
+          <p>风道、风轮、叶片、压损、P-Q 曲线、速度云图、流线和局部高损区域定位。</p>
         </article>
-        <article class="reveal">
-          <span class="line-icon">03</span>
+        <article class="cap-card reveal">
+          <span class="cap-num">03</span>
           <h3>强度 / 刚度校核</h3>
-          <p>关键受力件静力学分析、刚度校核和结构风险判断，支持产品方案迭代。</p>
+          <p>关键受力件静力学分析、刚度校核和结构风险判断，支持产品方案快速迭代。</p>
         </article>
-        <article class="reveal">
-          <span class="line-icon">04</span>
+        <article class="cap-card reveal">
+          <span class="cap-num">04</span>
           <h3>AI工程工具</h3>
-          <p>把工程判断、仿真需求分析、接单评估和报告流程做成可复用工具。</p>
+          <p>把工程判断、仿真需求分析、接单评估和报告流程做成可复用的智能化工具。</p>
         </article>
       </div>
     </section>
 
-    <!-- Resumes -->
+    <!-- Resume -->
     <section class="section shell" id="resumes">
       <div class="resume-panel reveal">
+        <div class="resume-panel-accent"></div>
         <div>
-          <p class="eyebrow">Resume Downloads</p>
+          <p class="eyebrow">· Resume Downloads ·</p>
           <h2>按岗位投递的简历版本</h2>
           <p>不同岗位使用不同版本，避免定位过散。</p>
         </div>
         <div class="resume-links">
-          <a href="assets/resumes/li-yuanqiang-cfd-resume.pdf" download>CFD流体仿真版</a>
-          <a href="assets/resumes/li-yuanqiang-robotics-structure-resume.pdf" download>机器人 / 智能硬件结构版</a>
-          <a href="assets/resumes/li-yuanqiang-industrial-software-resume.pdf" download>工业软件开发版</a>
+          <a href="assets/resumes/li-yuanqiang-cfd-resume.pdf" download>
+            <span class="resume-tag">CFD方向</span>
+            CFD流体仿真版
+          </a>
+          <a href="assets/resumes/li-yuanqiang-robotics-structure-resume.pdf" download>
+            <span class="resume-tag">结构方向</span>
+            机器人 / 智能硬件结构版
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Contact -->
-    <section class="section shell contact-section" id="contact">
-      <div class="contact reveal">
+    <section class="section shell" id="contact">
+      <div class="contact-panel reveal">
+        <div class="contact-panel-accent"></div>
         <div>
-          <p class="eyebrow">Contact</p>
+          <p class="eyebrow">· Contact ·</p>
           <h2>联系我</h2>
-          <p>适合结构开发、智能硬件、CFD仿真、工程软件和AI工程工具相关机会。</p>
+          <p>结构开发、智能硬件、CFD仿真、工程软件和 AI 工程工具相关机会。</p>
         </div>
         <address>
-          <a href="tel:18278077514">📞 182-7807-7514</a>
-          <a href="mailto:1756379242@qq.com">✉️ 1756379242@qq.com</a>
-          <span>📍 目标城市：深圳</span>
+          <a href="tel:18278077514">182-7807-7514</a>
+          <a href="mailto:1756379242@qq.com">1756379242@qq.com</a>
+          <span>目标城市：深圳</span>
         </address>
       </div>
     </section>
@@ -181,6 +269,193 @@
     <p>© 2026 李远强 · Structure, CFD and AI-assisted engineering tools.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <div class="lightbox" aria-hidden="true" role="dialog" aria-label="图片预览">
+    <button class="lightbox-close" type="button" aria-label="关闭">×</button>
+    <img src="" alt="">
+    <p></p>
+  </div>
+
+  <script>
+    /* ============================================================
+       CFD Streamline Background Animation
+       ============================================================ */
+    (function() {
+      const canvas = document.getElementById('flow-bg');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      let w, h;
+      const particles = [];
+      const PARTICLE_COUNT = 80;
+      const FLOW_ZONES = 4;
+
+      function resize() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      // Perlin-like noise for organic flow
+      function noise(x, y, t) {
+        const n = Math.sin(x * 0.008 + t) * Math.cos(y * 0.006 + t * 0.7) +
+                  Math.sin((x + y) * 0.005 + t * 1.3) * Math.cos(x * 0.007 - t * 0.5) +
+                  Math.cos(x * 0.004 - y * 0.009 + t * 0.9) * Math.sin(y * 0.005 + t * 1.1);
+        return n / 2.5;
+      }
+
+      class Particle {
+        constructor() {
+          this.reset();
+        }
+        reset() {
+          this.x = Math.random() * w;
+          this.y = Math.random() * h;
+          this.life = 0;
+          this.maxLife = 150 + Math.random() * 350;
+          this.size = 0.4 + Math.random() * 1.2;
+          this.opacity = 0.08 + Math.random() * 0.2;
+          this.trail = [];
+          this.maxTrail = 30 + Math.floor(Math.random() * 50);
+        }
+        update(t) {
+          const nx = noise(this.x, this.y, t);
+          const ny = noise(this.x + 100, this.y + 100, t + 1.5);
+          const angle = Math.atan2(ny, nx) + (Math.random() - 0.5) * 0.3;
+          const speed = 0.4 + Math.abs(nx + ny) * 0.6;
+
+          this.x += Math.cos(angle) * speed;
+          this.y += Math.sin(angle) * speed;
+
+          this.trail.push({ x: this.x, y: this.y, a: this.opacity });
+          if (this.trail.length > this.maxTrail) this.trail.shift();
+
+          this.life++;
+          if (this.life > this.maxLife || this.x < -50 || this.x > w + 50 || this.y < -50 || this.y > h + 50) {
+            this.reset();
+            this.x = Math.random() * w;
+            this.y = Math.random() * h;
+          }
+        }
+        draw(ctx) {
+          if (this.trail.length < 2) return;
+          ctx.beginPath();
+          ctx.moveTo(this.trail[0].x, this.trail[0].y);
+          for (let i = 1; i < this.trail.length; i++) {
+            ctx.lineTo(this.trail[i].x, this.trail[i].y);
+          }
+          ctx.strokeStyle = `rgba(0, 229, 255, ${this.opacity * 0.5})`;
+          ctx.lineWidth = this.size;
+          ctx.stroke();
+
+          // Glow at head
+          if (this.trail.length > 0) {
+            const head = this.trail[this.trail.length - 1];
+            ctx.beginPath();
+            ctx.arc(head.x, head.y, this.size * 2, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(0, 229, 255, ${this.opacity})`;
+            ctx.fill();
+          }
+        }
+      }
+
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push(new Particle());
+      }
+
+      let tick = 0;
+      function animate() {
+        tick += 0.004;
+        ctx.clearRect(0, 0, w, h);
+
+        // Subtle radial vignette
+        const grd = ctx.createRadialGradient(w * 0.3, h * 0.3, 0, w * 0.5, h * 0.5, Math.max(w, h));
+        grd.addColorStop(0, 'rgba(0, 229, 255, 0.03)');
+        grd.addColorStop(0.5, 'rgba(0, 229, 255, 0.01)');
+        grd.addColorStop(1, 'rgba(6, 13, 24, 0)');
+        ctx.fillStyle = grd;
+        ctx.fillRect(0, 0, w, h);
+
+        particles.forEach(p => {
+          p.update(tick);
+          p.draw(ctx);
+        });
+
+        requestAnimationFrame(animate);
+      }
+      animate();
+    })();
+
+    /* ============================================================
+       Scroll Reveal + Nav + Lightbox + Metrics Counter
+       ============================================================ */
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinksEl = document.getElementById('nav-links');
+
+    navToggle?.addEventListener('click', () => {
+      const open = navLinksEl.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(open));
+    });
+    navLinksEl?.addEventListener('click', e => {
+      if (e.target.matches('a')) {
+        navLinksEl.classList.remove('open');
+        navToggle?.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Lightbox
+    const lightbox = document.querySelector('.lightbox');
+    const lbImg = lightbox?.querySelector('img');
+    const lbCaption = lightbox?.querySelector('p');
+    const lbClose = document.querySelector('.lightbox-close');
+
+    document.querySelectorAll('[data-lightbox]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        lbImg.src = btn.getAttribute('data-lightbox');
+        lbImg.alt = btn.getAttribute('data-caption') || '';
+        lbCaption.textContent = btn.getAttribute('data-caption') || '';
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    function closeLB() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    }
+    lbClose?.addEventListener('click', closeLB);
+    lightbox?.addEventListener('click', e => { if (e.target === lightbox) closeLB(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLB(); });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Counter animation
+    const metricObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const nums = entry.target.querySelectorAll('.metric-num');
+        nums.forEach(el => {
+          const target = parseInt(el.dataset.target);
+          const dur = 1200;
+          const start = performance.now();
+          function update(now) {
+            const p = Math.min((now - start) / dur, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(eased * target);
+            if (p < 1) requestAnimationFrame(update);
+          }
+          requestAnimationFrame(update);
+        });
+        metricObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.hero-metrics').forEach(el => metricObserver.observe(el));
+  </script>
 </body>
 </html>
